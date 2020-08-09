@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "module": "esnext",
+    "isolatedModules": true,
+    "lib": ["es6", "dom", "dom.iterable", "esnext"]
+  },
+  "include": ["**/*.tsx", "**/*.ts", "./__tests__/*.tsx"]
+}

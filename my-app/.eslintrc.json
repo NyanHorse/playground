@@ -1,0 +1,56 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
+    "plugin:functional/recommended",
+    "plugin:jest/recommended"
+  ],
+    "plugins": ["react", "@typescript-eslint", "prettier", "functional", "simple-import-sort", "react-hooks", "jest"],
+  "env": {
+    "browser": true,
+    "jasmine": true,
+    "jest": true,
+    "es6": true
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true
+      }
+    ],
+    "semi": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "functional/prefer-type-literal": "off",
+    "functional/functional-parameters": ["error", {"enforceParameterCount": false}],
+    "functional/no-expression-statement": "off", // We need to disable this one to be able to use react hooks
+    "functional/no-conditional-statement": "off",
+    // "functional/no-conditional-statement": ["error", {"allowReturningBranches": "ifExhaustive"}],
+    "functional/no-return-void": "off",
+    "functional/no-mixed-type": "off", // Disallowed as doesn't allow for props with functions
+    "sort-imports": "off",
+    "simple-import-sort/sort": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error"
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "overrides": [
+    {
+      "files": ["src/dataElements/components/Editor/DiffEditor.tsx", "src/dataElements/components/Editor/Editor.tsx"],
+      "rules": {
+        "simple-import-sort/sort": "off"
+      }
+    }
+  ]
+}
